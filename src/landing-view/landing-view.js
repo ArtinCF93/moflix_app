@@ -17,8 +17,8 @@ let LandingPage = () => {
              </p>
          </div>
          <div className='featuredButtons'>
-             <button className='play'></button>
-             <button classsName='more'></button>
+             <button className='play'>Play Trailer</button>
+             <button className='more'>More</button>
          </div>
     </div>
   )

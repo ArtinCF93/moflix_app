@@ -1,4 +1,104 @@
+.featured {
+    font-family: Varela Round;
+}
+
 .bckImg {
     width: 100%;
     object-fit: cover;
+}
+
+.info {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    color: white;
+    max-width: 400px;
+}
+
+.klogo {
+    height: 300px;
+}
+
+.desc {
+    position: relative;
+    left: 30px;
+    bottom: 80px;
+    background-color: rgb(0, 0, 0, .4);
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
+.featuredButtons {
+    position: absolute;
+    left: 80px;
+    bottom: 65px;
+    font-family: Varela Round;
+}
+
+.play {
+    background-color: yellow;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    border: solid 2px black;
+    font-weight: 600;
+    color: #0099FF;
+    cursor: pointer;
+}
+
+.more {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+}
+
+@media (max-height: 600px) {
+    
+    .klogo {
+        height: 180px;
+    }
+
+    .info {
+        position: absolute;
+        left: 50px;
+        bottom: 0px;
+        color: white;
+        max-width: 400px;
+    }
+
+    .desc {
+        position: relative;
+        left:15px;
+        bottom: 80px;
+        background-color: rgb(0, 0, 0, .4);
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+    
+    .featuredButtons {
+        position: absolute;
+        left: 60px;
+        bottom: 5px;
+        font-family: Varela Round;
+    }
+}
+
+@media (max-height: 370px) {
+    
+    .klogo {
+        display: none;
+    }
+
+    .info {
+        display: none;
+    }
+
+    .featuredButtons {
+        display: none;
+    }
 }
