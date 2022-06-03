@@ -7,7 +7,7 @@ let Navbar = () => {
   let [navbar, setNavbar ] = useState(false);
 
   let changeNav = () => {
-    if(window.scrollY >= 40) {
+    if(window.scrollY >= 750) {
       setNavbar(true)
     } else {
       setNavbar(false);
