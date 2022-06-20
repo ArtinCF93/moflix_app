@@ -1,5 +1,5 @@
 import React from 'react'
-import bckImg from '../files/kenobi.jpg'
+import bckImg from '../files/kenobi.png'
 import Klogo from '../files/kenobilogo.png'
 
 import './landing-view.css'

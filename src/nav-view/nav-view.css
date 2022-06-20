@@ -6,14 +6,13 @@
 }
 
 .navbar.active {
-    background-color: white;
+    background-color: black;
     font-size: 14px;
     font-family: Varela Round;
     font-weight: 300;
     position: fixed;
     top: 0;
     width: 100%;
-    color: black;
 }
 
 .container {
@@ -64,13 +63,6 @@ span:hover {
 .nav-link:hover {
     opacity: .4;
     transition: .5s;
-}
-
-.nav-link.active {
-    color: black;
-    text-decoration: none;
-    margin-right: 30px;
-    font-weight: 600;
 }
 
 .nav-link.active:hover {

@@ -1,0 +1,29 @@
+.movie1 {
+    position: relative;
+    width: 300px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.movie-info {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.movie-overview1 {
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    color: aliceblue;
+    display: none;
+}
+
+.movie1:hover .movie-overview1 {
+    display: block;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out
+}

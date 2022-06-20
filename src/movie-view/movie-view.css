@@ -20,12 +20,3 @@
 .listWrapper::-webkit-scrollbar {
     width: 0;
 }
-
-.movieCard {
-    margin-right: 14px;
-    cursor: pointer;
-}
-
-.movieCard:hover {
-    transform: scale(1.05);
-}

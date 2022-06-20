@@ -1,57 +1,48 @@
 import './App.css'
-import React, { useState , useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './nav-view/nav-view'
 import LandingPage from './landing-view/landing-view'
 import MovieView from './movie-view/movie-view';
 import SearchView from './search-view/search-view';
+import LoginView from './login-view/login-view';
+
 
 const App = () => {
 
-  let [movies, setMovies] = useState([]);
-  let [searchResponse, setSearchResponse] = useState('');
+  let [user, setUser] = useState('');
 
-
-// get all movies
-  let searchMovie = async (searchResponse) => {
-    let url = `http://www.omdbapi.com/?s=${searchResponse}&apikey=d0023cdd`
-  
-    let response = await fetch(url);
-    let responseJson = await response.json();
-
-    console.log(responseJson);
-    if(responseJson.Search){
-      setMovies(responseJson.Search)
-    }
-  }
-  
-  // this is similar to compnentdidMount
-  useEffect(() => {
-    searchMovie(searchResponse)
-  }, [searchResponse])
+ let onLoggedIn = (authData) => {
+    console.log(authData);
+    setUser(authData.user.Username)
+    // The auth information received from the handleSubmit method—the token and the user—is saved in localStorage
+    localStorage.setItem('token', authData.token); //localStorage has a setItem method that accepts two arguments: a key and a value.
+    localStorage.setItem('user', authData.user.Username);
+}
 
   return (
     <div className='app'>
       <Router>
-        <Navbar />
         <Routes>
-          <Route path="/" element={
+        <Route path="/" element={
+            <>
+            <LoginView 
+              onLoggedIn={user => onLoggedIn(user)}
+            />
+            </>
+            } />
+          <Route path="/home" element={
             <>
             <LandingPage />
-            <MovieView 
-              movies ={movies}/>
+            <MovieView />
             </>
             } />
           <Route path="/Search" element={
-            <SearchView 
-              movies ={movies} 
-              saerchResponse={searchResponse}
-              setSearchResponse={setSearchResponse} 
-            />
+            <SearchView />
             }
-            // both functions from useState are sent to SearchView componenent sp setSearchRes can be attached to input and can take effect
             />
         </Routes>
+        <Navbar />
       </ Router >
     </div>
   )
