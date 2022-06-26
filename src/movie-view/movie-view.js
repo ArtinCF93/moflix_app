@@ -78,7 +78,7 @@ const MovieView = () => {
       <div className='listWrapper'>
         {movies.map((movie) => <MovieCard key={movie.id} {...movie} className='movieCard' />)}
       </div>
-      <p className='listTitle'>Latest and Greatest Movies</p>
+      <p className='listTitle'>Latest Movies</p>
       <div className='listWrapper'>
         {movies3.map((movie) => <MovieCard key={movie.id} {...movie} className='movieCard' />)}
       </div>

@@ -8,6 +8,7 @@ import './login-view.css';
 let LoginView = (props) => {
     let [username, setUsername] = useState('');
     let [password, setPassword] = useState('');
+    
 
 
     const handleSubmit = (e) => {
@@ -32,32 +33,36 @@ let LoginView = (props) => {
     //essentially the value starts with the current state of 'username' and changes to the target value of 'setUsername'
     return (
         <div className='login-container'>
-            <div className='login-content'>
                 <img className='login-image' src={logo} alt="" />
-                <div className='login-header'><h1>Login</h1></div>
                 <form className='login-form'>
-                    <div className='userName'>
+                    <div className='login-label'>
                     <label>
-                        Username:
-                        <br />
-                        <input type="text" value={username}
+                        <input 
+                            type="text"
+                            value={username}
+                            placeholder='Username...'
                             onChange={e => setUsername(e.target.value)} />
                     </label>
                     </div>
-                    <div className='userName'>
+                    <div className='login-label'>
                     <label>
-                        Password:
-                        <br />
-                        <input type="text" value={password}
+                        <input 
+                            type="text"
+                            value={password}
+                            placeholder='Password...'
                             onChange={e => setPassword(e.target.value)} />
                     </label>
                     </div>
-                    <button type="submit" onClick={handleSubmit}>Submit</button>
-                    <Link to='/register'>  
-                              <button className='toBtn' variant="link">Or Sign Up</button>
+                    <div className='homeBtns'>
+                    <button 
+                        type="submit"
+                        className='loginBtn'
+                        onClick={handleSubmit}>Submit</button>
+                    <Link to='/registration'>  
+                              <button className='signupBtn' variant="link">Or Sign Up</button>
                     </Link>
+                    </div>
                 </form>
-            </div>
         </div>
     );
 }

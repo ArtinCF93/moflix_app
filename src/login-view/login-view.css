@@ -7,28 +7,41 @@
     margin-top: 10rem;
 }
 
-.login-header {
-}
-
-.login-content {
-}
-
-
 .login-image {
     width: 400px;
 }
 
 
 .login-form {
+    margin-top: 50px;
+    text-align: center
 }
 
-.userName {
+.login-label {
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.btn {
+.loginBtn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #0099FF;
+    color: white;
+    cursor: pointer;
 }
 
-.toBtn {
+.signupBtn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.homeBtns {
+    display: flex;
+    flex-direction: column;
 }
