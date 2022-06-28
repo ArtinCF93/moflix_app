@@ -7,7 +7,7 @@ import MovieView from './movie-view/movie-view';
 import SearchView from './search-view/search-view';
 import LoginView from './login-view/login-view';
 import RegistrationView from './registration-view/registration-view';
-import ProfileView from './profile-view/profile-view';
+import ProfileView from './password-view/password-view';
 
 
 
@@ -54,6 +54,12 @@ const App = () => {
             </>
           }
           />
+          <Route path="/password" element={
+            <>
+            { !user && <ProfileView /> }
+            </>
+          }
+          />
           <Route path="/registration" element={
             <>
               <RegistrationView
@@ -63,10 +69,6 @@ const App = () => {
           } />
           <Route path="/Search" element={
             <SearchView />
-          }
-          />
-          <Route path="/profile" element={
-            <ProfileView />
           }
           />
         </Routes>

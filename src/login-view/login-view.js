@@ -61,6 +61,9 @@ let LoginView = (props) => {
                     <Link to='/registration'>  
                               <button className='signupBtn' variant="link">Or Sign Up</button>
                     </Link>
+                    <Link to='/password'>  
+                              <button className='forgotBtn' variant="link">Forgot Password</button>
+                    </Link>
                     </div>
                 </form>
         </div>

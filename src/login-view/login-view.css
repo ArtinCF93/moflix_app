@@ -31,6 +31,12 @@
     cursor: pointer;
 }
 
+.loginBtn:hover {
+    opacity: .7;
+    transition: .5s;
+}
+
+
 .signupBtn {
     padding: 10px;
     margin: 10px;
@@ -41,7 +47,24 @@
     cursor: pointer;
 }
 
+.signupBtn:hover {
+    opacity: .4;
+    transition: .5s;
+}
+
 .homeBtns {
     display: flex;
     flex-direction: column;
+}
+
+.forgotBtn {
+    background-color: transparent;
+    color: white;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.forgotBtn:hover {
+    opacity: .4;
+    transition: .5s;
 }

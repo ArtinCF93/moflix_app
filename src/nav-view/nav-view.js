@@ -33,7 +33,6 @@ let Navbar = () => {
                 <Link to='/' className='nav-link'>Home</Link>
                 <span>My List</span>
                 <Link to='/Search' className='nav-link'>Search</Link>
-                <Link to='/profile' className='nav-link'>Profile</Link>
             </div>
             <div className='right'>
               <span
