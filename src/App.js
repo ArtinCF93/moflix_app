@@ -10,7 +10,6 @@ import RegistrationView from './registration-view/registration-view';
 import ProfileView from './password-view/password-view';
 
 
-
 const App = () => {
 
   let [user, setUser] = useState(null);

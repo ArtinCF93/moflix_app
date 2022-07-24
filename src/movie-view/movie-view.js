@@ -3,6 +3,7 @@ import MovieCard from '../movie-card/movie-card'
 import './movie-view.css'
 
 
+
 const MovieView = () => {
 
   let [movies, setMovies] = useState([]);
@@ -10,6 +11,7 @@ const MovieView = () => {
   let [movies3, setMovies3] = useState([]);
   let [tvShow, setTVShow] = useState([]);
   let [tvShow2, setTVShow2] = useState([]);
+
 
   //get all movies
   let getMovies = async () => {
@@ -62,21 +64,25 @@ const MovieView = () => {
       })
   }
 
+
   useEffect(() => {
     getMovies();
     getMovies4();
     getMovies3();
     getTVshows();
     getTVshows2();
-  }, [])
-
+  }, []);
 
 
   return (
     <div className='list'>
       <p className='listTitle'>Popular Movies</p>
       <div className='listWrapper'>
-        {movies.map((movie) => <MovieCard key={movie.id} {...movie} className='movieCard' />)}
+        {movies.map((movie) => 
+          <MovieCard 
+            key={movie.id}
+            {...movie}
+            className='movieCard'/>)}
       </div>
       <p className='listTitle'>Latest Movies</p>
       <div className='listWrapper'>

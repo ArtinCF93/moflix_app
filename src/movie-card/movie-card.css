@@ -15,7 +15,7 @@
 
 .movie-overview1 {
     background-color: black;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 10px;
     position: absolute;
     color: aliceblue;
@@ -26,4 +26,15 @@
     display: block;
     transform: translateY(-100%);
     transition: transform 1s ease-in-out
+}
+
+.fav-button {
+    cursor: pointer;
+    background-color: red;
+    padding: 10px;
+    font-weight: 800;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid white;
 }

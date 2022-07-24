@@ -1,9 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react';
+import axios from 'axios';
 import './movie-card.css'
 
 let IMG_API = 'https://image.tmdb.org/t/p/w500/'
 
-let MovieCard = ({ title, name, poster_path, overview, vote_average }) => {
+let MovieCard = ({ id, title, name, poster_path, overview, vote_average }) => {
+
+    let addFavMovie = () => {
+        const Username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        axios({
+          method: 'post',
+          url: `https://quiet-headland-10477.herokuapp.com/users/${Username}/movies/${id}`,
+          headers: { Authorization: `Bearer ${token}` },
+        })
+          .then(() => {
+            alert(`${title} was added to your Favorites`);
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+      }
+
 
     return (
         <div className='movie1'>
@@ -15,6 +33,12 @@ let MovieCard = ({ title, name, poster_path, overview, vote_average }) => {
                     <h4>{vote_average}</h4>
                 </div>
                 <p>{overview}</p>
+                <button variant='danger' className="fav-button" value={id} 
+                    onClick={
+                        addFavMovie
+                    }>
+                        + Add to Favorites
+                </button>
             </div>
         </div>
     )

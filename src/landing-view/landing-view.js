@@ -1,10 +1,22 @@
-import React from 'react'
+import React, {useState}from 'react'
 import bckImg from '../files/kenobi.png'
 import Klogo from '../files/kenobilogo.png'
+import Modal from '../modal-view/modal_view';
 
 import './landing-view.css'
 
 let LandingPage = () => {
+
+let [modal, setModal] = useState(false)
+
+let unsetModal = () => {
+  if(window.scrollY >= 550) {
+    setModal(false)
+  } 
+}
+
+window.addEventListener('scroll', unsetModal);
+
   return (
     <div className='featured'>
          <img src={bckImg} className='bckImg' alt="BackgroundImage"/>
@@ -17,8 +29,10 @@ let LandingPage = () => {
              </p>
          </div>
          <div className='featuredButtons'>
-             <button className='play'>Play Trailer</button>
-             <button className='more'>More</button>
+             <button 
+              className='play'
+              onClick={() => setModal(true)}>Play Trailer</button>
+             <Modal isOpen={modal} isClosed={() => setModal(false)}/>
          </div>
     </div>
   )
