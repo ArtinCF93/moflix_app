@@ -8,6 +8,7 @@ import SearchView from './search-view/search-view';
 import LoginView from './login-view/login-view';
 import RegistrationView from './registration-view/registration-view';
 import ProfileView from './password-view/password-view';
+import FavView from './flist-view/flist-view';
 
 
 const App = () => {
@@ -66,8 +67,12 @@ const App = () => {
               />
             </>
           } />
-          <Route path="/Search" element={
+          <Route path="/search" element={
             <SearchView />
+          }
+          />
+          <Route path="/mylist" element={
+            <FavView />
           }
           />
         </Routes>
