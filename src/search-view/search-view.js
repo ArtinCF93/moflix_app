@@ -33,14 +33,14 @@ const SearchView = () => {
           value={searchQuery} //the template literal goes into the url during an api search
           onChange={(event) => setSearchQuery(event.target.value)}
           placeholder='Search...'
+          className='searchInput'
         />
-        </form>
-        <hr className='divider'/>
         <div className='movieGrid'>
         {searchMovies.map((movie, index) => (
             <MovieBox key={movie.id} {...movie}/>
           ))}
         </div>
+        </form>
     </div>
   )
 }

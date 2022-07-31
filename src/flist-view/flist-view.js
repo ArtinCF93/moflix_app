@@ -4,7 +4,6 @@ import '../search-view/search-view.css'
 import Navbar from '../nav-view/nav-view'
 import FavMovie from '../fmovie-card/fmovie-card'
 
-let IMG_API = 'https://image.tmdb.org/t/p/w500/'
 
 const FavView = () => {
 
@@ -28,23 +27,6 @@ const FavView = () => {
     catch (e) {
       console.log('e', e);
     }
-  }
-
-
-  let removeFavMovie = () => {
-    const token = localStorage.getItem('token');
-    const Username = localStorage.getItem('user');
-
-    axios.delete(`https://quiet-headland-10477.herokuapp.com/users/${Username}/movies/${movies.id}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then((response) => {
-        alert(`${movies.title} was deleted from your Favorites`)
-        // window.location.reload();   
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
   }
 
 
@@ -84,14 +66,8 @@ const FavView = () => {
         <Navbar />
         <div className='searchContainer'>
           {movies.map((movie) => <FavMovie key={movie.id} {...movie} className='movieCard' />)}
-          <button variant='danger' className="fav-button"
-            onClick={
-              removeFavMovie
-            }>
-            - Delete from Favorites
-          </button>
         </div>
-        <button variant='danger' className="fav-button"
+        <button variant='danger' className="delButton"
           onClick={
             deleteUser
           }>

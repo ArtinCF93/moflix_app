@@ -31,6 +31,10 @@
     font-weight: 300;
 }
 
+.navitems #hidden{
+    display: none;
+}
+
 .signoutButton {
     color: rgb(255, 0, 0);
     background-color: white;
@@ -73,4 +77,82 @@ span:hover {
 .nav-link.active:hover {
     opacity: .4;
     transition: .5s;
+}
+
+.hamburger {
+    display: none
+}
+
+.nav-link2 {
+    display: none;
+}
+
+.nav-link3 {
+    display: none;
+}
+
+@media all and (max-width: 600px) {
+
+    .hamburger {
+        display: flex;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .signoutButton {
+        display: none;
+    }
+
+    .hamburger.active{
+        position: absolute;
+        left: 0px;
+        top: 80px;
+        height: 225px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        float: right;
+        border-radius: 10px;
+    }
+
+   .nothing {
+    display: none;
+   }
+
+   .nav-link2 {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    border-bottom: 2px solid white;
+    align-items: center;
+}
+
+.nav-link3 {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-top: 20px;
+    border-bottom: 2px solid black;
+    align-items: center;
+    color: rgb(255, 0, 0);
+    background-color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: Varela Round;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.nav-link2:hover {
+    opacity: .4;
+    transition: .5s;
+}
 }

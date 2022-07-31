@@ -1,6 +1,7 @@
 .featured {
     font-family: Varela Round;
-    height: 960px;
+    height: 950px;
+    width: 100%;
 }
 
 .bckImg {
@@ -57,8 +58,25 @@
     cursor: pointer;
 }
 
-@media (max-height: 600px) {
+
+@media all and (max-width: 800px) {
     
+    .featured {
+        font-family: Varela Round;
+        height: 750px;
+        width: 100%;
+    }
+}
+
+
+@media all and (max-width: 600px) {
+    
+    .featured {
+        font-family: Varela Round;
+        height: 750px;
+        width: 100%;
+    }
+
     .klogo {
         height: 180px;
     }
@@ -66,7 +84,7 @@
     .info {
         position: absolute;
         left: 50px;
-        bottom: 0px;
+        bottom: 50px;
         color: white;
         max-width: 400px;
     }
@@ -84,22 +102,45 @@
     .featuredButtons {
         position: absolute;
         left: 60px;
-        bottom: 5px;
+        bottom: 50px;
         font-family: Varela Round;
     }
 }
 
-@media (max-height: 370px) {
+@media all and (max-width: 480px) {
+
+    .featured {
+        font-family: Varela Round;
+        height: 750px;
+        width: 100%;
+    }
     
     .klogo {
-        display: none;
+        height: 160px;
     }
 
     .info {
-        display: none;
+        position: absolute;
+        left: 50px;
+        bottom: 120px;
+        color: white;
+        max-width: 250px;
+    }
+
+    .desc {
+        position: relative;
+        left:15px;
+        bottom: 80px;
+        background-color: rgb(0, 0, 0, .4);
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 13px;
     }
 
     .featuredButtons {
-        display: none;
+        position: absolute;
+        left: 60px;
+        bottom: 120px;
+        font-family: Varela Round;
     }
 }
