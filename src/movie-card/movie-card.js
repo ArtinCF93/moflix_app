@@ -4,6 +4,15 @@ import './movie-card.css'
 
 let IMG_API = 'https://image.tmdb.org/t/p/w500/'
 
+/**
+ * MovieCard
+ * The movie object array is transferred into this compoennt as paramters
+ * 
+ * The addFavMovie() function adds a favorite movie to the favoriteMovies[] in the user object
+ * The function takes the id of the movie from the parameter and sending a post mthod via axios
+ * the function is invoked on an onClick event
+ */
+
 let MovieCard = ({ id, title, name, poster_path, overview, vote_average }) => {
 
     let addFavMovie = () => {

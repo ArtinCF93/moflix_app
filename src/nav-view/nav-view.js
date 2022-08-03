@@ -6,9 +6,27 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 let Navbar = () => {
 
+  /**
+   * Navbar
+   1. the state 'navbar' is used to initiate a fixed navbar when the user scrolls down at 750px
+   2. navbar is set to false to show the default navbar at the top. 
+   3. When false, the default navbar is set to class name '.navbar', when true, its set to class name by '.navbar active'
+   3. changeNav function is initiated at 750px Y at scroll to implement
+   */
+
+   /**
+   * Hamburger
+   * The Hamburger menu is divided in 2 groups. The button and the actual menu.
+   1. the Hamburger button is set to a className of '.hamburger'.
+   2. At 600px X, the , '.hamburger' is changed to display flex. And displays an icon from a package library
+   3. The actual hamburger menu is controlled by the state hamburger in useState. It is triggered on and off (true or false) by an onClick event.
+   4. When false, the hamburger menu is set to className '.nothing'that displays none. When true, its set to '.hamburger active'
+   */
+
   let [navbar, setNavbar] = useState(false);
   let [hamburger, setHamburger] = useState(false);
   let [user, setUser] = useState('')
+
 
   let changeNav = () => {
     if (window.scrollY >= 750) {

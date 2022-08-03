@@ -13,9 +13,10 @@ import FavView from './flist-view/flist-view';
 
 const App = () => {
 
-  let [user, setUser] = useState(null);
+  let [user, setUser] = useState(localStorage.getItem('user'));
+console.log('user', user)
 
-
+//login method
   let onLoggedIn = (authData) => {
     console.log(authData);
     setUser(authData.user.Username)
@@ -25,11 +26,12 @@ const App = () => {
   }
 
 
+  //registration method
   let onSignedUp = (authData) => {
     console.log(authData);
     alert('Thank you for Registering! You will now be returned to the Login page to Sign in');
     window.open('/', '_self');
-    setUser(authData.user.Username)
+    setUser(authData.user.Username)//this is to change the user state from null to the user username
     // The auth information received from the handleSubmit method—the token and the user—is saved in localStorage
     localStorage.setItem('token', authData.token); //localStorage has a setItem method that accepts two arguments: a key and a value.
     localStorage.setItem('user', authData.user.Username);
@@ -42,10 +44,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={
             <>
+            {/* if no user, show the login screen */}
               {!user && <LoginView //LoginView is imported to MainView to pass the user details to LoginView
                 onLoggedIn={user => onLoggedIn(user)}
               />
               }
+              {/* if there is a user, show the main landing page */}
               {user && <>
                 <LandingPage />
                 <MovieView />

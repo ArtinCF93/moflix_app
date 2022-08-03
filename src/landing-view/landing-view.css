@@ -18,13 +18,10 @@
 }
 
 .klogo {
-    height: 300px;
+    height: 150px;
 }
 
 .desc {
-    position: relative;
-    left: 30px;
-    bottom: 80px;
     background-color: rgb(0, 0, 0, .4);
     padding: 20px;
     border-radius: 20px;
@@ -32,9 +29,6 @@
 }
 
 .featuredButtons {
-    position: absolute;
-    left: 80px;
-    bottom: 65px;
     font-family: Varela Round;
 }
 
@@ -78,7 +72,7 @@
     }
 
     .klogo {
-        height: 180px;
+        height: 100px;
     }
 
     .info {
@@ -90,9 +84,6 @@
     }
 
     .desc {
-        position: relative;
-        left:15px;
-        bottom: 80px;
         background-color: rgb(0, 0, 0, .4);
         padding: 20px;
         border-radius: 20px;
@@ -100,9 +91,6 @@
     }
     
     .featuredButtons {
-        position: absolute;
-        left: 60px;
-        bottom: 50px;
         font-family: Varela Round;
     }
 }
@@ -116,7 +104,7 @@
     }
     
     .klogo {
-        height: 160px;
+        height: 60px;
     }
 
     .info {
@@ -128,9 +116,6 @@
     }
 
     .desc {
-        position: relative;
-        left:15px;
-        bottom: 80px;
         background-color: rgb(0, 0, 0, .4);
         padding: 20px;
         border-radius: 20px;
@@ -138,9 +123,6 @@
     }
 
     .featuredButtons {
-        position: absolute;
-        left: 60px;
-        bottom: 120px;
         font-family: Varela Round;
     }
 }

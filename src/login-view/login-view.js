@@ -6,6 +6,13 @@ import './login-view.css';
 
 
 let LoginView = (props) => {
+
+ /**
+   * login
+   1. each input value is set to a state
+   2. The handlesubmit function initiates upon a click event, an axios post request is initiated to post the state values to the database to create a new user
+   */
+
     let [username, setUsername] = useState('');
     let [password, setPassword] = useState('');
     

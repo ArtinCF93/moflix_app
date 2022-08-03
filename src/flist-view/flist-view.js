@@ -12,6 +12,11 @@ const FavView = () => {
 
 
   //get user that is logged in
+  /**
+   * getUser() returns the user that is logged in, saves the users favoriteMovies into the state of 'movies'
+   * maps out the FavoriteMovies array to return each movie one by one and save it in a variable
+   * the movies variable is mapped out into an array and saved in the setMovies function
+   */
   let getUser = async (token) => {
     try {
       const response = await axios.get('https://quiet-headland-10477.herokuapp.com/users', {
@@ -30,7 +35,14 @@ const FavView = () => {
   }
 
 
-  //delete user 
+
+  /**
+   * deleteUser() deletes a user
+   * sends a delete request via axios to delete the user
+   * identifies the username as a template literal by retrieving the username from localstorage
+   * .then() removes the user from localstorage
+   * initiates on an onClick event
+    */
   let deleteUser = (e) => {
     e.preventDefault();
 
@@ -65,14 +77,23 @@ const FavView = () => {
       <div>
         <Navbar />
         <div className='searchContainer'>
-          {movies.map((movie) => <FavMovie key={movie.id} {...movie} className='movieCard' />)}
-        </div>
-        <button variant='danger' className="delButton"
-          onClick={
-            deleteUser
-          }>
-          Delete Account
-        </button>
+          <div className='favoriteMovie'>
+            {movies.map((movie) =>
+              <FavMovie
+                key={movie.id}
+                {...movie} className='movieCard'
+                // filters the deleted movie and returns a new array of the other movies 
+                onDelete={() => { setMovies(prev => prev.filter(m => m.id !== movie.id)) }}
+              />
+            )}
+          </div>
+          <button className="delButton"
+            onClick={
+              deleteUser
+            }>
+            Delete Account
+          </button></div>
+
       </div>
     )
   }
