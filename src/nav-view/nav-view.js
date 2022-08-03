@@ -25,7 +25,6 @@ let Navbar = () => {
 
   let [navbar, setNavbar] = useState(false);
   let [hamburger, setHamburger] = useState(false);
-  let [user, setUser] = useState('')
 
 
   let changeNav = () => {
@@ -39,7 +38,6 @@ let Navbar = () => {
   let onLoggedOut = () => {
     localStorage.removeItem('token'); //removing the data from storgae
     localStorage.removeItem('user');
-    setUser(null)
     window.open('/', '_self');
   }
 
