@@ -77,7 +77,7 @@ const FavView = () => {
       <div>
         <Navbar />
         <div className='searchContainer'>
-          <div className='favoriteMovie'>
+        <div className='movieGrid'>
             {movies.map((movie) =>
               <FavMovie
                 key={movie.id}
